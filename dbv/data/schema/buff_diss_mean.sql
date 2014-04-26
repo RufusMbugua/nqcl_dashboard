@@ -1,0 +1,22 @@
+CREATE TABLE `buff_diss_mean` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `labref` varchar(20) NOT NULL,
+  `component_no` int(11) NOT NULL DEFAULT '0',
+  `component` varchar(20) NOT NULL,
+  `dissolution_medium` varchar(30) NOT NULL,
+  `volume_used` int(11) NOT NULL,
+  `apparatus` int(11) NOT NULL,
+  `rotations_per_minute` int(11) NOT NULL,
+  `time_taken` int(11) NOT NULL,
+  `time_taken2` int(11) NOT NULL,
+  `time_taken3` int(11) NOT NULL,
+  `time_taken4` int(11) NOT NULL,
+  `time_taken5` int(11) NOT NULL,
+  `diss_total` double(10,6) NOT NULL,
+  `diss_mean` double(10,6) NOT NULL,
+  `repeat_status` int(11) NOT NULL,
+  `analyst_id` int(11) NOT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `date_time` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

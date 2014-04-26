@@ -1,0 +1,32 @@
+CREATE DEFINER=`root`@`localhost` TRIGGER `after_update_user` AFTER UPDATE ON `user`
+ FOR EACH ROW begin
+insert into user_log
+set user_log_id=new.id,
+	old_user_log_fname=old.fname ,
+new_user_log_fname=new.fname,
+  old_user_log_lname=old.lname ,
+new_user_log_lname=new.lname,
+  old_user_log_email=old.email ,
+new_user_log_email=new.email ,
+  old_user_log_username=old.username ,
+new_user_log_username=new.username,
+  old_user_log_password=old.password ,
+new_user_log_password=new.password ,
+  old_user_log_telephone=old.telephone,
+new_user_log_telephone=new.telephone,
+  old_user_log_alias=old.alias ,
+new_user_log_alias=new.alias ,
+  old_user_log_user_type=old.user_type ,
+new_user_log_user_type=new.user_type ,
+  old_user_log_department_id=old.department_id ,
+new_user_log_department_id =new.department_id ,
+  old_user_log_pm_count=old.pm_count ,
+new_user_log_pm_count=new.pm_count ,
+  old_user_log_acc_status=old.acc_status ,
+new_user_log_acc_status =new.acc_Status ,
+old_user_log_comment=old.comment ,
+new_user_log_comment =new.comment ,
+log_date=now(),
+who=current_user(),
+activity='Updated';
+end

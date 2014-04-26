@@ -1,0 +1,30 @@
+CREATE DEFINER=`root`@`localhost` TRIGGER `after_delete_clients` AFTER DELETE ON `clients`
+ FOR EACH ROW BEGIN
+insert into clients_log
+set clients_log_id=old.id ,
+old_clients_log_name=old.name ,
+new_clients_log_name=null ,
+old_clients_log_alias=old.alias ,
+new_clients_log_alias=null ,
+old_clients_log_address=old.address ,
+new_clients_log_address=null ,
+old_clients_log_client_type=old.client_type ,
+new_clients_log_client_type=null ,
+old_clients_log_contact_person=old.contact_person ,
+new_clients_log_contact_person=null ,
+old_clients_log_contact_phone=old.contact_phone ,
+new_clients_log_contact_phone=null ,
+old_clients_log_version_id=old.version_id ,
+new_clients_log_version_id=null ,
+old_clients_log_created_at=old.created_at,
+new_clients_log_created_at=null,
+old_clients_log_updated_at=old.updated_at,
+new_clients_log_updated_at=null,
+old_clients_log_clientid=old.clientid,
+new_clients_log_clientid=null,
+old_clients_log_comment=old.comment,
+new_clients_log_comment=null,
+log_date=now(),
+action='Deleted',
+who=current_user();
+END

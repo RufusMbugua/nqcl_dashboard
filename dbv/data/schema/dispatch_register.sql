@@ -1,0 +1,20 @@
+CREATE TABLE `dispatch_register` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `cert_no` varchar(30) NOT NULL,
+  `request_id` varchar(30) NOT NULL,
+  `invoiced_amount` int(11) NOT NULL,
+  `invoice_no` varchar(30) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `amount_paid` int(11) NOT NULL,
+  `percentage` int(11) NOT NULL,
+  `balance` int(11) NOT NULL,
+  `quotation_status` int(11) NOT NULL DEFAULT '0',
+  `paid_status` int(11) NOT NULL DEFAULT '0',
+  `date_of_payment` date NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

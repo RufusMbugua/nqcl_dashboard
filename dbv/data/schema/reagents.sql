@@ -1,0 +1,21 @@
+CREATE TABLE `reagents` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `comment` varchar(255) NOT NULL DEFAULT 'No comment',
+  `manufacturer` varchar(35) NOT NULL,
+  `batch_no` varchar(15) DEFAULT NULL,
+  `date_received` date DEFAULT NULL,
+  `date_opened` date DEFAULT NULL,
+  `date_of_expiry` date DEFAULT NULL,
+  `reorder_level` varchar(30) DEFAULT NULL,
+  `volume` decimal(6,2) NOT NULL,
+  `qunit` varchar(15) NOT NULL,
+  `packaging` varchar(30) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `closing_value` int(11) NOT NULL,
+  `form` varchar(30) NOT NULL,
+  `reagentid` int(11) NOT NULL,
+  `edit_status` int(11) NOT NULL DEFAULT '0',
+  `status` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

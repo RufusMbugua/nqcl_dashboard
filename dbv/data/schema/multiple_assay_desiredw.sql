@@ -1,0 +1,20 @@
+CREATE TABLE `multiple_assay_desiredw` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `labref` varchar(20) NOT NULL,
+  `component` varchar(20) NOT NULL,
+  `component_no` int(11) NOT NULL DEFAULT '1',
+  `desired_weight` float NOT NULL,
+  `vf1` float NOT NULL,
+  `pippette1` float NOT NULL,
+  `vf2` float NOT NULL,
+  `pipette2` float NOT NULL,
+  `vf3` int(11) NOT NULL,
+  `pipette3` int(11) NOT NULL,
+  `vf4` int(11) NOT NULL,
+  `concetration` float(10,6) NOT NULL,
+  `repeat_status` int(11) NOT NULL,
+  `analyst_id` int(11) NOT NULL,
+  `potency` double(10,2) NOT NULL,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

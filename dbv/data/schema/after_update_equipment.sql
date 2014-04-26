@@ -1,0 +1,30 @@
+CREATE DEFINER=`root`@`localhost` TRIGGER `after_update_equipment` AFTER UPDATE ON `equipment`
+ FOR EACH ROW BEGIN
+insert into equipment_log
+set equipment_log_id=old.id ,
+  old_equipment_log_name=old.name ,
+new_equipment_log_name=new.name ,
+  old_equipment_log_model=old.model,
+new_equipment_log_model=new.model,
+  old_equipment_log_serial_no=old.serial_no,
+new_equipment_log_serial_no=new.serial_no,
+  old_equipment_log_nqcl_no=old.nqcl_no,
+new_equipment_log_nqcl_no=new.nqcl_no ,
+  old_equipment_log_date_acquired=old.date_acquired ,
+new_equipment_log_date_acquired=new.date_acquired ,
+  old_equipment_log_date_of_calibration=old.date_of_calibration,
+new_equipment_log_date_of_calibration=new.date_of_calibration,
+	old_equipment_log_date_of_nxtcalibration=old.date_of_nxtcalibration,
+new_equipment_log_date_of_nxtcalibration=new.date_of_nxtcalibration,
+  old_equipment_log_status=old.status,
+new_equipment_log_status=new.status,
+  old_equipment_log_room=old.room,
+new_equipment_log_room=new.room,
+  old_equipment_log_comment=old.comment,
+new_equipment_log_comment=new.comment,
+old_equipment_log_type=old.type,
+new_equipment_log_type=new.type,
+log_date=now(),
+action ='Updated',
+who=current_user();
+end

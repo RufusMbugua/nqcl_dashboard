@@ -1,0 +1,30 @@
+CREATE DEFINER=`root`@`localhost` TRIGGER `after_insert_user` AFTER INSERT ON `user`
+ FOR EACH ROW begin
+insert into user_log
+set user_log_id=new.id,
+  old_user_log_fname=null ,
+new_user_log_lname=new.lname,
+  old_user_log_email=null ,
+new_user_log_email=new.email ,
+  old_user_log_username=null ,
+new_user_log_username=new.username,
+  old_user_log_password=null ,
+new_user_log_password=new.password ,
+  old_user_log_telephone=null,
+new_user_log_telephone=new.telephone,
+  old_user_log_alias=null ,
+new_user_log_alias=new.alias ,
+  old_user_log_user_type=null ,
+new_user_log_user_type=new.user_type ,
+  old_user_log_department_id=null ,
+new_user_log_department_id =new.department_id ,
+  old_user_log_pm_count= "0",
+new_user_log_pm_count=new.pm_count ,
+  old_user_log_acc_status=null ,
+new_user_log_acc_status =new.acc_Status ,
+old_user_log_comment="No Comment" ,
+new_user_log_comment =new.comment ,
+log_date=now(),
+who=current_user(),
+activity='Inserted';
+end
