@@ -12,8 +12,8 @@ function loadGraph(base_url,function_url) {
 		},
 		success: function(data) {
 			obj = jQuery.parseJSON(data);
-			$("#chart_title").text()
-			$('#graph').empty(obj['chart_title']);
+			$("#chart_category").val(obj['cat']);
+			$('#graph').empty();
 			$('#graph').append('<div style="width:100%" id="'+obj['chart_container']+'"></div>');
 			runGraph(obj['chart_container'],obj['chart_type'],obj['chart_size'],obj['chart_title'],obj['chart_stacking'],obj['chart_categories'],obj['chart_series']);
 
@@ -44,9 +44,7 @@ function runGraph(chart_container,chart_type,chart_size,chart_title,chart_stacki
 				text: ''
 			},
 			labels: {
-				formatter: function() {
-					return this.value / 1000 + 'k';
-				}
+				
 			}
 		},
 		plotOptions: {

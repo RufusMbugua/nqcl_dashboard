@@ -17,14 +17,15 @@ class Data extends CI_Controller{
 			$category[]=$val[$cat];
 			$final_data[] = (int)$val['total'];
 		};
-		$resultData[]=array('name'=>'Quantity of '.ucwords(str_replace('_',' ',$cat)),'data'=>$final_data);
+		$resultData[]=array('name'=>'Quantity by '.ucwords(str_replace('_',' ',$cat)),'data'=>$final_data);
 
 		$graph['chart_container']='chart'.rand(1,1909099090);
 		$graph['chart_type']='spline';
-		$graph['chart_title']='Quantity';
+		$graph['chart_title']='Quantity of '.ucwords(str_replace('_',' ',$cat));
 		$graph['chart_stacking']='normal';
 		$graph['chart_size']=sizeof($category)*100;
 		$graph['chart_categories']=$category;
+		$graph['cat']=str_replace(' ','_',ucwords(str_replace('_',' ',$cat)));
 		$graph['chart_series']=$resultData;
 
 		$final = json_encode($graph);

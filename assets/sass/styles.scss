@@ -1,6 +1,8 @@
 // customize bootstrap variables here:
 @import "variables";
 @import "bootstrap";
+
+$tile-header-color:#666;
 //Mixins
 @mixin tile{
 	background-color: #fff;
@@ -14,21 +16,59 @@
 @mixin inner-style($height){
 	overflow-y: auto;
 	height:$height;
-	padding:0 2% 2% 2%;
 	form, ul {
 	width: 100%;
 	height: 90%;
 	padding: 0 2% 0 2%;
 	overflow-y: auto;
+	box-shadow: 0px 1px 5px 0px #d3d3d3;
 	font-size: 1em !important;
 }
+}
+.main-content{
+	@extend .col-md-12;
+
+	.inner{
+		@include inner-style(30%);
+	}
+	
+}
+h3{	
+	margin:0;
+	margin-bottom:0;
+		background:$tile-header-color;
+		color:white;
+		font:{
+			family: SourceSansPro-Regular;
+			size: 1.9em;
+			weight: normal;
+			color:#666;
+		}
+		padding:5px;
+		i{
+			color:#aaa;
+			font-weight:bold;
+			float:right;
+			cursor:pointer;
+			margin-left:10px;
+		}
+		i.selected{
+			color:#333;
+		}
+		i:hover{
+			color:#333;
+			cursor: hand;
+		}
+		select{
+			color:black;
+		}
+}
 .dashboard-nav{
-	z-index:100000000;
+border-radius:0;	
+	margin:0;
 	@extend .navbar;
 	@extend .navbar-default;
-	background:whitesmoke;
-	padding:3%;
-	position:fixed;
+	background:#fff;	
 	width:100%;
 }
 .footer{
@@ -54,7 +94,7 @@
 	}
 }
 .main-content{
-	@extend .col-md-10;
+	@extend .col-md-12;
 	height:60%;
 	overflow-x:auto;
 	overflow-y:hidden;
