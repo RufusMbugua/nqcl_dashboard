@@ -1,4 +1,6 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+if (!defined('BASEPATH')) exit('No direct script access allowed');
+
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -39,7 +41,6 @@
 
 $autoload['packages'] = array();
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Libraries
@@ -52,8 +53,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','table' );
-
+$autoload['libraries'] = array('database', 'minify', 'xmlrpc');
 
 /*
 | -------------------------------------------------------------------
@@ -64,8 +64,7 @@ $autoload['libraries'] = array('database','table' );
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','file');
-
+$autoload['helper'] = array('url', 'file');
 
 /*
 | -------------------------------------------------------------------
@@ -82,7 +81,6 @@ $autoload['helper'] = array('url','file');
 
 $autoload['config'] = array();
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Language files
@@ -98,7 +96,6 @@ $autoload['config'] = array();
 
 $autoload['language'] = array();
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Models
@@ -111,6 +108,6 @@ $autoload['language'] = array();
 
 $autoload['model'] = array();
 
-
 /* End of file autoload.php */
+
 /* Location: ./application/config/autoload.php */

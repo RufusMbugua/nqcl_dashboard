@@ -1,6 +1,11 @@
 // customize bootstrap variables here:
 @import "variables";
 @import "bootstrap";
+@import "CSS:../stylesheets/font-awesome/css/font-awesome";
+@import "CSS:../stylesheets/icons";
+@import "CSS:../stylesheets/normalize";
+@import "CSS:../stylesheets/demo";
+@import "CSS:../stylesheets/component";
 
 $tile-header-color:#666;
 //Mixins
